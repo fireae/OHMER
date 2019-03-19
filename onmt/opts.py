@@ -60,7 +60,7 @@ def model_opts(parser):
     # Encoder-Decoder Options
     group = parser.add_argument_group('Model- Encoder-Decoder')
     group.add('--model_type', '-model_type', default='text',
-              choices=['text', 'img', 'audio'],
+              choices=['text', 'img', 'audio', 'matrix'],
               help="Type of source model to use. Allows "
                    "the system to incorporate non-text inputs. "
                    "Options are [text|img|audio].")
@@ -88,6 +88,8 @@ def model_opts(parser):
     group.add('--rnn_size', '-rnn_size', type=int, default=-1,
               help="Size of rnn hidden states. Overwrites "
                    "enc_rnn_size and dec_rnn_size")
+    group.add('--enc_input_size', '-enc_input_size', type=int,
+              help="Size of encoder rnn input. ")
     group.add('--enc_rnn_size', '-enc_rnn_size', type=int, default=500,
               help="Size of encoder rnn hidden states. "
                    "Must be equal to dec_rnn_size except for "
