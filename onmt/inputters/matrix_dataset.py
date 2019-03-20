@@ -147,7 +147,10 @@ class MatrixField(Field):
 
 
 def matrix_fields(**kwargs):
+    # mat = MatrixField(
+    #     include_lengths=kwargs['include_lengths'], batch_first=False, 
+    #     pad_index=0, dtype=torch.float)
     mat = MatrixField(
-        include_lengths=kwargs['include_lengths'], batch_first=False, 
+        include_lengths=True, batch_first=False, 
         pad_index=0, dtype=torch.float)
     return mat
